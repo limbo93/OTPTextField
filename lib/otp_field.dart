@@ -62,6 +62,8 @@ class OTPTextField extends StatefulWidget {
 
   final List<TextInputFormatter>? inputFormatter;
 
+  final bool enabled;
+
   const OTPTextField({
     Key? key,
     this.length = 4,
@@ -84,6 +86,7 @@ class OTPTextField extends StatefulWidget {
         const EdgeInsets.symmetric(horizontal: 4, vertical: 8),
     this.isDense = false,
     this.onCompleted,
+     this.enabled = true,
   })  : assert(length > 1),
         super(key: key);
 
@@ -189,6 +192,7 @@ class _OTPTextFieldState extends State<OTPTextField> {
         maxLength: 1,
         focusNode: _focusNodes[index],
         obscureText: widget.obscureText,
+        enabled: widget.enabled,
         decoration: InputDecoration(
           isDense: widget.isDense,
           filled: true,
